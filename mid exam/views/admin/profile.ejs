@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>userlist</title>
+</head>
+<body>
+	<h1>Profile</h1>
+
+	<a href="/admin">Back</a> |
+	<a href="/logout">logout</a>
+
+<br><br>
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Full Name</td>
+			<td>USERNAME</td>
+			<td>PASSWORD</td>
+			<td>Type</td>
+		</tr>
+
+	<% for(var i=0; i< user.length; i++){ %>
+		<tr>
+			<td><%= user[i].id %></td>
+			<td><%= user[i].fullname %></td>
+			<td><%= user[i].username %></td>
+			<td><%= user[i].password %></td>
+			<td><%= user[i].type %></td>
+		</tr>
+
+	<% } %>
+	</table>
+</body>
+</html>

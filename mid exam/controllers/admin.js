@@ -96,11 +96,26 @@ router.post('/deco', function(req, res){
 		}
 	});
 });
+router.get('/profile', function(req, res){
 
-router.get('/test/:name/:id', function(req, res){
+	res.render('admin/profile');
+			
+});
+router.post('/profile', function(req, res){
+	var user = {
+		username:req.cookies['username'],
+	}
 
-	res.send(req.params.id+ "|"+req.params.name)
-})
+	conModel.getByName(user, function(status){
+		if(status){
+			console.log("successful");
+			res.render('admin/profile', {user: status})
+		}else{
+			res.redirect('/admin/deco');
+		}
+	});
+});
+
 
 
 
