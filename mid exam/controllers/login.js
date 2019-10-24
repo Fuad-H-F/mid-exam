@@ -1,5 +1,5 @@
 var express = require('express');
-var userModel = require('./../models/user-model');
+var regModel = require('./../models/registration-model');
 
 var router = express.Router();
 
@@ -14,12 +14,16 @@ router.post('/', function(req, res){
 		password: req.body.password
 	}
 
-	userModel.validate(user, function(status){
+	regModel.validate(user, function(result){
 		
-		if(status){
+		if(result=="admin"){
 			res.cookie('username', req.body.uname);
-			res.redirect('/home');	
-		}else{
+			res.redirect('/admin');
+		}else if(result=="moderator"){
+			res.cookie('username', req.body.uname);
+			res.redirect('/moderator');
+		}
+		else{
 			res.send('invalid username/password');
 		}
 	});

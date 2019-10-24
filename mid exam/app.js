@@ -8,6 +8,8 @@ var home  		= require('./controllers/home');
 var user  		= require('./controllers/user');
 var login  		= require('./controllers/login');
 var signup  	= require('./controllers/signup');
+var admin  		= require('./controllers/admin');
+var moderator  	= require('./controllers/moderator');
 var logout  	= require('./controllers/logout');
 var app 		= express();
 
@@ -22,6 +24,8 @@ app.use('/home', home);
 app.use('/user', user);
 app.use('/login', login);
 app.use('/signup', signup);
+app.use('/admin', admin);
+app.use('/moderator', moderator);
 app.use('/logout', logout);
 
 //ROUTING

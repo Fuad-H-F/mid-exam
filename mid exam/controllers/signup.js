@@ -1,5 +1,5 @@
 var express = require('express');
-var db = require('./../models/db.js');
+var regModel = require('./../models/registration-model');
 var router = express.Router();
 
 router.get('/', function(req, res){
@@ -16,16 +16,14 @@ router.post('/', function(req, res){
 		type	: req.body.type
 	}
 
-	userModel.validate(user, function(status){
-		
+	regModel.insert(user, function(status){
 		if(status){
-			res.cookie('username', req.body.uname);
-			res.redirect('/home');	
+			console.log("successful");
+			res.redirect('/home');
 		}else{
-			res.send('invalid username/password');
+			res.redirect('/signup');
 		}
 	});
-
 });
 
 
