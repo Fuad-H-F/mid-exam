@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>userlist</title>
+</head>
+<body>
+	<h1>upload content</h1>
+
+	<a href="/admin">Back</a> |
+	<a href="/logout">logout</a>
+
+<br><br>
+
+	<form method="post" >
+		<table border="0">
+			<tr>
+				<td>Type</td>
+				<td>
+					<select name="type">
+					  	<option value="movie">movie		</option>
+					  	<option value="software">software	</option>
+					  	<option value="tvseries">tvseries		</option>
+					  	<option value="game">game	</option>
+
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td> Name</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td> Language</td>
+				<td><input type="text" name="language"></td>
+			</tr>
+			<tr>
+				<td>genre</td>
+				<td><input type="text" name="genre"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="submit" value="Upload"></td>
+			</tr>		
+		</table>
+	</form>
+	</body>
+</html>

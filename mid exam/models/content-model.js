@@ -39,8 +39,8 @@ module.exports={
 		});
 	},
 	insert : function(user, callback){
-		var sql = "insert into member values('', ?, ?, ?, ?)";
-		db.execute(sql, [user.fullname,user.username, user.password,user.type], function(status){
+		var sql = "insert into content values('', ?, ?, ?, ?)";
+		db.execute(sql, [user.type,user.name, user.language,user.genre], function(status){
 			callback(status);
 		});
 	},
@@ -52,8 +52,8 @@ module.exports={
 		
 	},
 	delete : function(user, callback){
-		var sql = "DELETE FROM member WHERE username=? and type='moderator';";
-		db.execute(sql, [user.username],  function(status){
+		var sql = "DELETE FROM content WHERE name=?;";
+		db.execute(sql, [user.name],  function(status){
 			callback(status);
 		});
 	}
